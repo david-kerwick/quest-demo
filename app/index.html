@@ -181,9 +181,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                   window.setTimeout(function () {
                     console.log('Dev contact info');
-                    page.redirect(app.baseUrl + 'contact-info');
+                    app.route = 'contact-info';
+                    setFocus(app.route);
+//                    page.redirect(app.baseUrl + 'contact-info');
 //                        location = "/contact-info";
                   }, 4000);
+
+                  function setFocus(selected){
+                    document.querySelector('section[data-route="' + selected + '"] .page-title').focus();
+                    app.scrollPageToTop();
+                  }
 
                 });
               </script>
