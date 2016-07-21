@@ -183,8 +183,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     console.log('Dev contact info');
                     app.route = 'contact-info';
                     setFocus(app.route);
-//                    page.redirect(app.baseUrl + 'contact-info');
-//                        location = "/contact-info";
                   }, 4000);
 
                   function setFocus(selected){
@@ -216,58 +214,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   items='[ "Carlow", "Cavan", "Clare", "Cork", "Donegal", "Dublin 1", "Dublin 2", "Dublin 3", "Dublin 4", "Dublin 5", "Dublin 6", "Dublin 6W", "Dublin 7", "Dublin 8", "Dublin 9", "Dublin 10", "Dublin 11", "Dublin 12", "Dublin 13", "Dublin 14", "Dublin 15", "Dublin 16", "Dublin 17", "Dublin 18", "Dublin 20", "Dublin 22", "Dublin 24", "Dublin", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois", "Leitrim", "Limerick", "Longford", "Louth", "Mayo", "Meath", "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Waterford", "Westmeath", "Wexford", "Wicklow"]'
                 >
                 </vaadin-combo-box>
-                <!--<paper-dropdown-menu name="contact.county" label="County" no-ink no-animations>-->
-                <!--<paper-listbox class="dropdown-content">-->
-                <!--<paper-item>Carlow</paper-item>-->
-                <!--<paper-item>Cavan</paper-item>-->
-                <!--<paper-item>Clare</paper-item>-->
-                <!--<paper-item>Cork</paper-item>-->
-                <!--<paper-item>Donegal</paper-item>-->
-                <!--<paper-item>Dublin 1</paper-item>-->
-                <!--<paper-item>Dublin 2</paper-item>-->
-                <!--<paper-item>Dublin 3</paper-item>-->
-                <!--<paper-item>Dublin 4</paper-item>-->
-                <!--<paper-item>Dublin 5</paper-item>-->
-                <!--<paper-item>Dublin 6</paper-item>-->
-                <!--<paper-item>Dublin 6W</paper-item>-->
-                <!--<paper-item>Dublin 7</paper-item>-->
-                <!--<paper-item>Dublin 8</paper-item>-->
-                <!--<paper-item>Dublin 9</paper-item>-->
-                <!--<paper-item>Dublin 10</paper-item>-->
-                <!--<paper-item>Dublin 11</paper-item>-->
-                <!--<paper-item>Dublin 12</paper-item>-->
-                <!--<paper-item>Dublin 13</paper-item>-->
-                <!--<paper-item>Dublin 14</paper-item>-->
-                <!--<paper-item>Dublin 15</paper-item>-->
-                <!--<paper-item>Dublin 16</paper-item>-->
-                <!--<paper-item>Dublin 17</paper-item>-->
-                <!--<paper-item>Dublin 18</paper-item>-->
-                <!--<paper-item>Dublin 20</paper-item>-->
-                <!--<paper-item>Dublin 22</paper-item>-->
-                <!--<paper-item>Dublin 24</paper-item>-->
-                <!--<paper-item>Dublin</paper-item>-->
-                <!--<paper-item>Galway</paper-item>-->
-                <!--<paper-item>Kerry</paper-item>-->
-                <!--<paper-item>Kildare</paper-item>-->
-                <!--<paper-item>Kilkenny</paper-item>-->
-                <!--<paper-item>Laois</paper-item>-->
-                <!--<paper-item>Leitrim</paper-item>-->
-                <!--<paper-item>Limerick</paper-item>-->
-                <!--<paper-item>Longford</paper-item>-->
-                <!--<paper-item>Louth</paper-item>-->
-                <!--<paper-item>Mayo</paper-item>-->
-                <!--<paper-item>Meath</paper-item>-->
-                <!--<paper-item>Monaghan</paper-item>-->
-                <!--<paper-item>Offaly</paper-item>-->
-                <!--<paper-item>Roscommon</paper-item>-->
-                <!--<paper-item>Sligo</paper-item>-->
-                <!--<paper-item>Tipperary</paper-item>-->
-                <!--<paper-item>Waterford</paper-item>-->
-                <!--<paper-item>Westmeath</paper-item>-->
-                <!--<paper-item>Wexford</paper-item>-->
-                <!--<paper-item>Wicklow</paper-item>-->
-                <!--</paper-listbox>-->
-                <!--</paper-dropdown-menu>-->
+
                 <paper-input name="contact.eircode" label="Eircode" char-counter maxlength="8"></paper-input>
 
                 <paper-input name="contact.mobile" label="Mobile Number" char-counter maxlength="15" auto-validate
@@ -303,7 +250,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   console.log('In event listener');
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
-                    location = "/gp-selection";
+                    app.route = 'gp-selection';
+                    setFocus(app.route);
                   }, 2000);
 //                    location = "/contact";
                 });
@@ -349,7 +297,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   console.log('In event listener');
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
-                    location = "/consent";
+                    app.route = 'consent';
+                    setFocus(app.route);
                   }, 4000);
 //                    location = "/contact";
                 });
