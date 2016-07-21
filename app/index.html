@@ -172,7 +172,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   form.reset();
                   form.querySelector('.output').innerHTML = '';
                 }
-                console.log('hi ' + basic);
+                console.log('hi new version');
                 basic.addEventListener('iron-form-submit', function (event) {
                   console.log('In event listener');
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
@@ -182,13 +182,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   window.setTimeout(function () {
                     console.log('Dev contact info');
                     app.route = 'contact-info';
-                    setFocus(app.route);
+                    document.querySelector('section[data-route="' + app.route + '"] .page-title').focus();
+                    app.scrollPageToTop();
                   }, 4000);
 
-                  function setFocus(selected){
-                    document.querySelector('section[data-route="' + selected + '"] .page-title').focus();
-                    app.scrollPageToTop();
-                  }
+
 
                 });
               </script>
@@ -251,9 +249,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
                     app.route = 'gp-selection';
-                    setFocus(app.route);
+                    document.querySelector('section[data-route="' + app.route + '"] .page-title').focus();
                     app.scrollPageToTop();
-                  }, 2000);
+                  }, 4000);
 //                    location = "/contact";
                 });
               </script>
@@ -299,7 +297,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
                     app.route = 'consent';
-                    setFocus(app.route);
+                    document.querySelector('section[data-route="' + app.route + '"] .page-title').focus();
                     app.scrollPageToTop();
                   }, 4000);
 //                    location = "/contact";
