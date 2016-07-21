@@ -24,8 +24,6 @@
                     console.log('Dev contact info');
                     app.route = 'contact-info';
                     setFocus(app.route);
-//                    page.redirect(app.baseUrl + 'contact-info');
-//                        location = "/contact-info";
                   }, 4000);
 
                   function setFocus(selected){
@@ -49,7 +47,8 @@
                   console.log('In event listener');
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
-                    location = "/gp-selection";
+                    app.route = 'gp-selection';
+                    setFocus(app.route);
                   }, 2000);
 //                    location = "/contact";
                 });
@@ -69,7 +68,8 @@
                   console.log('In event listener');
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
-                    location = "/consent";
+                    app.route = 'consent';
+                    setFocus(app.route);
                   }, 4000);
 //                    location = "/contact";
                 });
