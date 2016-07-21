@@ -13,7 +13,7 @@
                   form.reset();
                   form.querySelector('.output').innerHTML = '';
                 }
-                console.log('hi ' + basic);
+                console.log('hi new version');
                 basic.addEventListener('iron-form-submit', function (event) {
                   console.log('In event listener');
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
@@ -23,13 +23,11 @@
                   window.setTimeout(function () {
                     console.log('Dev contact info');
                     app.route = 'contact-info';
-                    setFocus(app.route);
+                    document.querySelector('section[data-route="' + app.route + '"] .page-title').focus();
+                    app.scrollPageToTop();
                   }, 4000);
 
-                  function setFocus(selected){
-                    document.querySelector('section[data-route="' + selected + '"] .page-title').focus();
-                    app.scrollPageToTop();
-                  }
+
 
                 });
               </script></paper-material></section><section data-route="contact-info" tabindex="-1"><paper-material elevation="1"><h1 class="page-title" tabindex="-1">Contact Information</h1><form is="iron-form" method="get" action="/" id="basic2"><paper-input name="contact.addr1" label="Address 1" required="" auto-validate="" char-counter="" maxlength="25" error-message="Address 1 is required!"></paper-input><paper-input name="contact.addr2" label="Address 2" required="" auto-validate="" char-counter="" maxlength="25" error-message="Address 2 is required!"></paper-input><paper-input name="contact.addr3" label="Address 3" char-counter="" maxlength="25"></paper-input><vaadin-combo-box label="County" name="contact.county" error-message="County is required" required="" items='[ "Carlow", "Cavan", "Clare", "Cork", "Donegal", "Dublin 1", "Dublin 2", "Dublin 3", "Dublin 4", "Dublin 5", "Dublin 6", "Dublin 6W", "Dublin 7", "Dublin 8", "Dublin 9", "Dublin 10", "Dublin 11", "Dublin 12", "Dublin 13", "Dublin 14", "Dublin 15", "Dublin 16", "Dublin 17", "Dublin 18", "Dublin 20", "Dublin 22", "Dublin 24", "Dublin", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois", "Leitrim", "Limerick", "Longford", "Louth", "Mayo", "Meath", "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Waterford", "Westmeath", "Wexford", "Wicklow"]'></vaadin-combo-box><paper-input name="contact.eircode" label="Eircode" char-counter="" maxlength="8"></paper-input><paper-input name="contact.mobile" label="Mobile Number" char-counter="" maxlength="15" auto-validate="" pattern="[0-9]*" error-message="Enter only numbers"></paper-input><paper-input name="contact.phone" label="Landline Phone Number" char-counter="" maxlength="15" auto-validate="" pattern="[0-9]*" error-message="Enter only numbers"></paper-input><br><paper-button raised="" onclick="_reset(event)">Reset</paper-button><paper-button raised="" onclick="_submit(event)">Submit</paper-button><br><br><div>Values that will be submitted to the server will appear below and after 4 seconds you will be taken to the next screen</div><br><br><div class="output"></div></form><script>
@@ -48,9 +46,9 @@
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
                     app.route = 'gp-selection';
-                    setFocus(app.route);
+                    document.querySelector('section[data-route="' + app.route + '"] .page-title').focus();
                     app.scrollPageToTop();
-                  }, 2000);
+                  }, 4000);
 //                    location = "/contact";
                 });
               </script></paper-material></section><section data-route="gp-selection" tabindex="-1"><paper-material elevation="1"><h1 class="page-title" tabindex="-1">Select GP</h1><form is="iron-form" method="get" action="/" id="basic3"><paper-autocomplete name="gp.name" label="Search for GP" id="input-remote" remote-source="true" min-length="3"></paper-autocomplete><input name="gp.number" id="gp-number" hidden=""><br><paper-button raised="" onclick="_reset(event)">Reset</paper-button><paper-button raised="" onclick="_submit(event)">Submit</paper-button><br><br><div>Values that will be submitted to the server will appear below and after 4 seconds you will be taken to the next screen</div><br><br><div class="output"></div></form><script>
@@ -70,7 +68,7 @@
                   this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
                   window.setTimeout(function () {
                     app.route = 'consent';
-                    setFocus(app.route);
+                    document.querySelector('section[data-route="' + app.route + '"] .page-title').focus();
                     app.scrollPageToTop();
                   }, 4000);
 //                    location = "/contact";
