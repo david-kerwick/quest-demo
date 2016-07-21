@@ -17,10 +17,14 @@
                   basic.addEventListener('iron-form-submit', function(event) {
                     console.log('In event listener');
                     this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
+                    console.log('In index baseUrl = ' + app.baseUrl);
+                    console.log('In index port = ' + window.location.port);
                     if (window.location.port === '') {  // if production
+                      console.log('Production contact info');
                       window.setTimeout(function(){location = "https://david-kerwick.github.io/quest-demo/contact-info";}, 4000);
                     } else {
                       window.setTimeout(function () {
+                        console.log('Dev contact info')
                         location = "/contact-info";
                       }, 4000);
                     }
